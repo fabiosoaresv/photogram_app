@@ -20,6 +20,11 @@ Make download from these projects and enjoy! :)
 `$ yarn start`
 
 # Features
+* Created the route for uploading photos.
+* Created the route for view photos.
+* Built project to make photos upload with API.
+* Built project to view photos with API.
+* Implemented icons.
 
 # Created by
 * Fabio Soares @ 06/14/2019 / Updated last @ --/--/----

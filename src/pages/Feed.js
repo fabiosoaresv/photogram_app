@@ -23,7 +23,7 @@ class Feed extends Component {
   }
 
   registerToSocket = () => {
-    const socket = io('http://ph0togram-api.herokuapp.com/:80');
+    const socket = io('https://ph0togram-api.herokuapp.com/:443');
 
     //post, like
     socket.on('post', newPost => {
@@ -55,7 +55,7 @@ class Feed extends Component {
               </div>
               <img src={more} alt="Mais" />
             </header>
-            <img src={`http://ph0togram-api.herokuapp.com/:80/files/${post.image}`} alt="" />
+            <img src={`https://ph0togram-api.herokuapp.com/:443/files/${post.image}`} alt="" />
             <footer>
               <div className="actions">
                 <button type="actions" onClick={() => this.handleLike(post._id)}>

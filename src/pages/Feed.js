@@ -23,17 +23,17 @@ class Feed extends Component {
   }
 
   registerToSocket = () => {
-    const socket = io('http://localhost:3333');
+    const socket = io('https://ph0togram-api.herokuapp.com:443');
 
     //post, like
     socket.on('post', newPost => {
-      this.setState({ feed: [newPost, ... this.state.feed] });
+      this.setState({feed: [newPost, ... this.state.feed]});
     })
 
     socket.on('like', likedPost => {
       this.setState({
         feed: this.state.feed.map(post =>
-          post._id == likedPost._id ? likedPost : post
+          post._id === likedPost._id ? likedPost : post
         )
       });
     })
@@ -55,7 +55,7 @@ class Feed extends Component {
               </div>
               <img src={more} alt="Mais" />
             </header>
-            <img src={`http://localhost:3333/files/${post.image}`} alt="" />
+            <img src={`https://ph0togram-api.herokuapp.com:443/files/${post.image}`} alt="" />
             <footer>
               <div className="actions">
                 <button type="actions" onClick={() => this.handleLike(post._id)}>
